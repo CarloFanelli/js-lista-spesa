@@ -26,3 +26,34 @@ while (i < listaSpesa.length){
 
     i++;
 }
+
+document.getElementById('aggiornaSpesa').addEventListener('click',function(e){
+    e.preventDefault();
+
+    while (i < listaSpesa.length){
+
+        const prodottoSpesa = listaSpesa[i];
+        // console.log(prodottoSpesa); -- debug
+    
+        const lisataMarkup = `<li>${prodottoSpesa}</li>`;
+    
+        listaSpesaDOM.insertAdjacentHTML('beforeend',lisataMarkup);
+    
+        i++;
+    }
+})
+
+document.getElementById('aggiungiElemento').addEventListener('click' , function(e){
+    e.preventDefault();
+
+    const nuovoProdotto = document.getElementById('prodotto').value;
+    // console.log(nuovoProdotto); -- debug
+
+    listaSpesa.push(nuovoProdotto);
+
+    console.log(listaSpesa);
+
+    document.getElementById('prodotto').value = '';
+
+}
+)
